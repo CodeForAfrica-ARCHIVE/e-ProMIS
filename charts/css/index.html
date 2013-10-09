@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if (IE 9)]><html class="no-js ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en-US"> <!--<![endif]--><head>
+
+        <!-- Meta Tags -->
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <title>Hela Visualizations</title>   
+
+        <meta name="description" content="Insert Your Site Description" /> 
+		
+        <!-- Mobile Specifics -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="MobileOptimized" content="320"/>   
+
+        <!--Internet Explorer -->
+
+        <!-- Bootstrap -->
+        <link href="http://hela.code4kenya.org/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Main Style -->
+        <link href="http://hela.code4kenya.org/css/main.css" rel="stylesheet">
+
+        <!-- Supersized -->
+        <link href="http://hela.code4kenya.org/css/supersized.css" rel="stylesheet">
+        <link href="http://hela.code4kenya.org/css/supersized.shutter.css" rel="stylesheet">
+
+        <!-- FancyBox -->
+        <link href="http://hela.code4kenya.org/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+
+        <!-- Font Icons -->
+        <link href="http://hela.code4kenya.org/css/fonts.css" rel="stylesheet">
+
+        <!-- Shortcodes -->
+        <link href="http://hela.code4kenya.org/css/shortcodes.css" rel="stylesheet">
+
+        <!-- Responsive -->
+        <link href="http://hela.code4kenya.org/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="http://hela.code4kenya.org/css/responsive.css" rel="stylesheet">
+
+        <!-- Supersized -->
+        <link href="http://hela.code4kenya.org/css/supersized.css" rel="stylesheet">
+        <link href="http://hela.code4kenya.org/css/supersized.shutter.css" rel="stylesheet">
+
+        <!-- Google Font -->
+        <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900' rel='stylesheet' type='text/css'>
+
+        <!-- Fav Icon -->
+        <link rel="shortcut icon" href="#">
+        
+        <link href="http://foo.com/bar.html#disqus_thread">
+
+        <link rel="apple-touch-icon" href="#">
+        <link rel="apple-touch-icon" sizes="114x114" href="#">
+        <link rel="apple-touch-icon" sizes="72x72" href="#">
+        <link rel="apple-touch-icon" sizes="144x144" href="#">
+
+        <!-- Modernizr -->
+        <script src="http://hela.code4kenya.org/js/modernizr.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+        <script type="text/javascript">
+            $( "#search" ).autocomplete({
+                source: function(request, response) {
+                    $.ajax({
+                        url: "http://hela.code4kenya.org/search/",
+                        data: { term: $("#search").val()},
+                        dataType: "json",
+                        type: "POST",
+                        success: function(data){
+                            var resp = $.map(data,function(obj){
+                                return obj.tag;
+                            }); 
+
+                            response(resp);
+                        }
+                    });
+                },
+                minLength: 2
+            });
+        </script>
+
+        <!-- Analytics -->
+        <script type="text/javascript">
+            
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'Insert Your Code']);
+            _gaq.push(['_trackPageview']);
+            
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+            
+        </script>
+        
+
+        <!-- End Analytics -->
+        
+        
+        <link href="http://hela.code4kenya.org/img/icon.ico" rel="icon" type="image/x-icon" />
+
+    </head>
+
+
+
+
+
+    <body>
+    <!-- Header -->
+    <header>
+        <div class="sticky-nav">
+            <a id="mobile-nav" class="menu-nav" href="#menu-nav"></a>
+
+            <div id="logo">
+                <a id="goUp" href="#" title="hela"></a>
+            </div>
+
+            <nav id="menu">
+                <ul id="menu-nav">
+                    <li><a href="http://www.hela.code4kenya.org" target="new">Search County</a></li>
+                    <li><a href="http://www.hela.code4kenya.org" target="_parent">Projects</a></li>
+                    <!--li><a href="#about">Impact</a></li-->
+                    <li><a href="http://www.hela.code4kenya.org" target="_parent">MDG Affiliation</a></li>
+                    <li><a href="http://www.hela.code4kenya.org" target="_parent">Your Feedback</a></li>
+                </ul>
+            </nav>
+            <div class="current" style="padding-top:18px;"><a href="#" style="color:#13c4d3; margin-top:5px; font-size:21px; text-align:justify;" >&nbsp;&nbsp;&nbsp;&nbsp;OTHERS</a></div>
+
+        </div>
+   
+    </header>
+    <!-- End Header -->
+    
+    <!--Donor Funding -->
+    <div id="donor" class="page"  >
+        <div class="container" >
+        
+            <!-- Title Page -->
+            <div class="row">
+                <div class="span12">
+                    <div class="title-page" style="padding-bottom:30px;">
+                        <h4 >AMOUNT IN DONOR FUNDING PER COUNTY</h4>
+                    </div>
+                </div>
+               </div>
+            <!-- End Title Page -->
+     	      <div id="wrap" align="center" >
+<style>#geocommons_map_276070 {width: 80%; height: 400px; position:relative;}</style>
+<div class="geocommons_map" id="geocommons_map_276070"></div><br/>
+<a class="geocommons_map_link" id="geocommons_map_276070_link" href="http://geocommons.com/maps/276070">View map on GeoCommons</a>
+<script type="text/javascript" charset="utf-8" src="http://geocommons.com/javascripts/f1.api.js"></script>
+<script type="text/javascript" charset="utf-8">
+
+  var geocommons_map_276070 = new F1.Maker.Map({map_id: "276070", dom_id: "geocommons_map_276070"});
+
+</script>           
+          </div>
+          </div>
+          </div>
+          
+                    
+    <!-- End Donor Funding -->
+    
+    <!-- MDG Section --> 
+    <div id="work" class="page"  >
+        <div class="container" >
+        
+            <!-- Title Page -->
+            <div class="row">
+                <div class="span12">
+                    <div class="title-page" style="padding-bottom:30px;">
+                        <h4 >PROJECT FUNDING BY MDG AFFILIATION</h4>
+                    </div>
+                </div>
+               </div>
+            <!-- End Title Page -->
+            <!--call MDG Affiliation Viz here-->
+         <div id="wrap" align="center">
+<script type="text/javascript" src="http://public.tableausoftware.com/javascripts/api/viz_v1.js"></script><div class="tableauPlaceholder" style="width:900px; height:400px;"><noscript><a href="#"><img alt="PROJECT FUNDING BY MDG AFFILIATION " src="http:&#47;&#47;public.tableausoftware.com&#47;static&#47;images&#47;PR&#47;PROJECTFUNDINGBYMDGAFFILIATION&#47;PROJECTFUNDINGBYMDGAFFILIATION&#47;1_rss.png" style="border: none" /></a></noscript><object class="tableauViz" width="900" height="400" style="display:none;"><param name="host_url" value="http%3A%2F%2Fpublic.tableausoftware.com%2F" /><param name="site_root" value="" /><param name="name" value="PROJECTFUNDINGBYMDGAFFILIATION&#47;PROJECTFUNDINGBYMDGAFFILIATION" /><param name="tabs" value="no" /><param name="toolbar" value="yes" /><param name="static_image" value="http:&#47;&#47;public.tableausoftware.com&#47;static&#47;images&#47;PR&#47;PROJECTFUNDINGBYMDGAFFILIATION&#47;PROJECTFUNDINGBYMDGAFFILIATION&#47;1.png" /><param name="animate_transition" value="yes" /><param name="display_static_image" value="yes" /><param name="display_spinner" value="yes" /><param name="display_overlay" value="yes" /><param name="display_count" value="yes" /></object></div><div style="width:900px;height:22px;padding:0px 10px 0px 0px;color:black;font:normal 8pt verdana,helvetica,arial,sans-serif;"><div style="float:left; padding-right:8px;"></div></div>
+         
+            </div>
+            <!--end MDG Affiliation-->
+            			
+            </div>
+            </div>
+            <!--End MDG Section-->
+
+            <!-- Donor Governments Section -->
+            <div id="mdg" class="page">
+                <div class="container">
+                
+                    <!-- Title Page -->
+                    <div class="row">
+                        <div class="span12">
+                            <div class="title-page" style="padding-bottom:30px;">
+                                <h4 >PROJECT FUNDING BY VARIOUS GOVERNMENTS</h4>
+                                </div>
+                        </div>
+                    </div>
+                    <!-- End Title Page -->
+                    <!--call donor governments viz here-->
+                    <div  id="wrap" align="center">
+<script type="text/javascript" src="http://public.tableausoftware.com/javascripts/api/viz_v1.js"></script><div class="tableauPlaceholder" style="width:900px; height:400px;"><noscript><a href="#"><img alt="PROJECTS FUNDED BY VARIOUS GOVERNMENTS " src="http:&#47;&#47;public.tableausoftware.com&#47;static&#47;images&#47;PR&#47;PROJECTSFUNDEDBYVARIOUSGOVERNMENTS&#47;PROJECTSFUNDEDBYVARIOUSGOVERNMENTS&#47;1_rss.png" style="border: none" /></a></noscript><object class="tableauViz" width="900" height="400" style="display:none;"><param name="host_url" value="http%3A%2F%2Fpublic.tableausoftware.com%2F" /><param name="site_root" value="" /><param name="name" value="PROJECTSFUNDEDBYVARIOUSGOVERNMENTS&#47;PROJECTSFUNDEDBYVARIOUSGOVERNMENTS" /><param name="tabs" value="no" /><param name="toolbar" value="yes" /><param name="static_image" value="http:&#47;&#47;public.tableausoftware.com&#47;static&#47;images&#47;PR&#47;PROJECTSFUNDEDBYVARIOUSGOVERNMENTS&#47;PROJECTSFUNDEDBYVARIOUSGOVERNMENTS&#47;1.png" /><param name="animate_transition" value="yes" /><param name="display_static_image" value="yes" /><param name="display_spinner" value="yes" /><param name="display_overlay" value="yes" /><param name="display_count" value="yes" /></object></div><div style="width:900px;height:22px;padding:0px 10px 0px 0px;color:black;font:normal 8pt verdana,helvetica,arial,sans-serif;"><div style="float:left; padding-right:8px;"></div></div>
+                    <!-- End Donor Governments Section -->
+                    </div>
+                    </div>
+                    </div>
+
+<!-- Functions of Government Section --> 
+    <div id="about" class="page"  >
+        <div class="container" >
+        
+            <!-- Title Page -->
+            <div class="row">
+                <div class="span12">
+                    <div class="title-page" style="padding-bottom:30px;">
+                        <h4 >PROJECTS CLASSIFIED BY FUNCTIONS OF GOVERNMENT</h4>
+                    </div>
+                </div>
+               </div>
+            <!-- End Title Page -->
+            <!--call Functions of Government Viz here-->
+         <div  id="wrap" align="center">
+<script type="text/javascript" src="http://public.tableausoftware.com/javascripts/api/viz_v1.js"></script><div class="tableauPlaceholder" style="width:900px; height:400px;"><noscript><a href="#"><img alt="Sheet 1 " src="http:&#47;&#47;public.tableausoftware.com&#47;static&#47;images&#47;Se&#47;Sectors&#47;Sheet1&#47;1_rss.png" style="border: none" /></a></noscript><object class="tableauViz" width="900" height="400" style="display:none;"><param name="host_url" value="http%3A%2F%2Fpublic.tableausoftware.com%2F" /><param name="site_root" value="" /><param name="name" value="Sectors&#47;Sheet1" /><param name="tabs" value="no" /><param name="toolbar" value="yes" /><param name="static_image" value="http:&#47;&#47;public.tableausoftware.com&#47;static&#47;images&#47;Se&#47;Sectors&#47;Sheet1&#47;1.png" /><param name="animate_transition" value="yes" /><param name="display_static_image" value="yes" /><param name="display_spinner" value="yes" /><param name="display_overlay" value="yes" /><param name="display_count" value="yes" /></object></div><div style="width:900px;height:22px;padding:0px 10px 0px 0px;color:black;font:normal 8pt verdana,helvetica,arial,sans-serif;"><div style="float:left; padding-right:8px;"></div></div>
+
+
+            </div>
+            <!--end Functions of Government Viz-->
+            			
+            </div>
+            </div>
+            <!--End Functions of Government Section-->
+
+
+                    <!-- Status Section -->
+                    <div id="feedback" class="page" >
+                        <div class="container">
+                            <!-- Title Page -->
+                            <div class="row">
+                                <div class="span12">
+                                    <div class="title-page" style="padding-bottom:30px;">
+                                        <h4 >STATUS OF FUNDED PROJECTS IN KENYA</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Title Page -->
+                            <!-- Call Status Viz Here -->
+                            <div  id="wrap" align="center">
+<script type="text/javascript" src="http://public.tableausoftware.com/javascripts/api/viz_v1.js"></script><div class="tableauPlaceholder" style="width:900px; height:400px;"><noscript><a href="#"><img alt="Sheet 1 " src="http:&#47;&#47;public.tableausoftware.com&#47;static&#47;images&#47;ST&#47;STATUSOFVARIOUSFUNDEDPROJECTS&#47;Sheet1&#47;1_rss.png" style="border: none" /></a></noscript><object class="tableauViz" width="900" height="400" style="display:none;"><param name="host_url" value="http%3A%2F%2Fpublic.tableausoftware.com%2F" /><param name="site_root" value="" /><param name="name" value="STATUSOFVARIOUSFUNDEDPROJECTS&#47;Sheet1" /><param name="tabs" value="no" /><param name="toolbar" value="yes" /><param name="static_image" value="http:&#47;&#47;public.tableausoftware.com&#47;static&#47;images&#47;ST&#47;STATUSOFVARIOUSFUNDEDPROJECTS&#47;Sheet1&#47;1.png" /><param name="animate_transition" value="yes" /><param name="display_static_image" value="yes" /><param name="display_spinner" value="yes" /><param name="display_overlay" value="yes" /><param name="display_count" value="yes" /></object></div><div style="width:900px;height:22px;padding:0px 10px 0px 0px;color:black;font:normal 8pt verdana,helvetica,arial,sans-serif;"><div style="float:left; padding-right:8px;"></div></div>
+					<!--End Status Viz Here--> 
+                    </div> 
+                    </div>
+                    </div>
+								
+                    <!-- End Status Section -->
+
+
+
+                    <!-- Socialize -->
+                    <div id="social-area" class="page">
+                        <div class="container">
+                            <div class="row">
+                                <div class="span12" style="padding-bottom:50px; padding-top:50px;">
+                                    <nav id="social">
+                                        <ul>
+                                            <li><a href="https://twitter.com/hela.co.ke" title="Follow Me on Twitter" target="_blank"><span class="font-icon-social-twitter"></span></a></li>
+                                             <li><a href="https://www.facebook.com/hela.co.ke" title="Follow Me on Facebook" target="_blank"><span class="font-icon-social-facebook"></span></a></li>
+                                            <li><a href="https://plus.google.com/" title="Follow Me on Google Plus" target="_blank"><span class="font-icon-social-google-plus"></span></a></li>
+                                            <li><a href="http://www.linkedin.com/in/hela.co.ke" title="Follow Me on LinkedIn" target="_blank"><span class="font-icon-social-linkedin"></span></a></li>
+                                           
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="span10" id="wrap"  >
+        	<p>AN INITIATIVE OF THE NATIONAL TREASURY<br/> ePROMIS DEPARTMENT<br/>
+                                <img src="http://hela.code4kenya.org/img/gok.jpg" /></p>
+                                
+                               
+            <p> SUPPORTED BY:<br/>
+            <a href="http://wbi.worldbank.org/wbi/open-aid-partnership/" target="_blank"><img src="http://hela.code4kenya.org/img/OpenAid.jpg" /></a><br/><br/>
+            
+            <a href="http://africanmediainitiative.org/" target="_blank"><img src="http://hela.code4kenya.org/img/ami-logo.png"/></a>
+            <a href="http://wbi.worldbank.org/wbi/" target="_blank"><img src="http://hela.code4kenya.org/img/WBI.png" /></a>
+                                            <br/> 
+        					</div> 
+                        </div>
+                    </div>
+                    <!-- End Socialize -->
+                    <!-- Footer -->
+                    <footer>
+                        <p class="credits"><a href="http://openinstitute.com" target="new"><img src="http://hela.code4kenya.org/img/oi.png" style="padding-left:1000px"  /></a>
+            </p>
+                    </footer>
+                    <!-- End Footer -->
+
+                    <!-- Back To Top -->
+                    <a id="back-to-top" href="#">
+                        <i class="font-icon-arrow-simple-up"></i>
+                    </a>
+                    <!-- End Back to Top -->
+
+
+                    <!-- Js -->
+                    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
+                    <script src="http://hela.code4kenya.org/js/bootstrap.min.js"></script> 
+                    <script src="http://hela.code4kenya.org/js/supersized.3.2.7.min.js"></script> 
+                    <script src="http://hela.code4kenya.org/js/waypoints.js"></script> 
+                    <script src="http://hela.code4kenya.org/js/waypoints-sticky.js"></script> 
+                    <script src="http://hela.code4kenya.org/js/jquery.isotope.js"></script> 
+                    <script src="http://hela.code4kenya.org/js/jquery.fancybox.pack.js"></script> 
+                    <script src="http://hela.code4kenya.org/js/jquery.fancybox-media.js"></script> 
+                    <script src="http://hela.code4kenya.org/js/jquery.tweet.js"></script> 
+                    <script src="http://hela.code4kenya.org/js/plugins.js"></script> 
+                    <script src="http://hela.code4kenya.org/js/main.js"></script> 
+                    <script src="http://hela.code4kenya.org/http://d3js.org/d3.v3.min.js" charset="utf-8"></script> 
+                    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+                    <!-- End Js -->
+
+                    </body>
+                    </html>
